@@ -35,6 +35,7 @@ namespace SimpleBrouser
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // webBrowser
@@ -53,6 +54,7 @@ namespace SimpleBrouser
             this.buttonUpdate.Size = new System.Drawing.Size(75, 73);
             this.buttonUpdate.TabIndex = 4;
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonHome
             // 
@@ -62,6 +64,7 @@ namespace SimpleBrouser
             this.buttonHome.Size = new System.Drawing.Size(75, 73);
             this.buttonHome.TabIndex = 3;
             this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // buttonNext
             // 
@@ -83,11 +86,22 @@ namespace SimpleBrouser
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Image = global::SimpleBrouser.Properties.Resources.info_64;
+            this.buttonSearch.Location = new System.Drawing.Point(825, 12);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 73);
+            this.buttonSearch.TabIndex = 5;
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1657, 917);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.buttonNext);
@@ -107,6 +121,7 @@ namespace SimpleBrouser
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }
 

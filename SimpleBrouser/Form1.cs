@@ -12,6 +12,7 @@ namespace SimpleBrouser
 {
     public partial class Form1 : Form
     {
+        string mainSite = "google.com.ua";
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace SimpleBrouser
         private void Init()
         {
             webBrowser.ScriptErrorsSuppressed = true;
-            webBrowser.Navigate("google.com.ua");
+            webBrowser.Navigate(mainSite);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -32,6 +33,21 @@ namespace SimpleBrouser
         private void buttonNext_Click(object sender, EventArgs e)
         {
             webBrowser.GoForward();
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            webBrowser.Refresh();
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            webBrowser.GoHome();
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            webBrowser.GoSearch();
         }
     }
 }

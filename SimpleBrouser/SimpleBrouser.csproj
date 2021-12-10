@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="link.ico" />
+    <None Include="src\info_64.png" />
     <None Include="src\next_page_64.png" />
     <None Include="src\reset_64.png" />
     <None Include="src\home_64.png" />
