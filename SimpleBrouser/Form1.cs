@@ -15,14 +15,23 @@ namespace SimpleBrouser
         public Form1()
         {
             InitializeComponent();
-
+            Init();
         }
 
         private void Init()
         {
-            webBrowser1.ScriptErrorsSuppressed = true;
+            webBrowser.ScriptErrorsSuppressed = true;
+            webBrowser.Navigate("google.com.ua");
         }
 
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            webBrowser.GoBack();
+        }
 
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            webBrowser.GoForward();
+        }
     }
 }
