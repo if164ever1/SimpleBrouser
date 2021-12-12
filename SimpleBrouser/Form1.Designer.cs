@@ -36,20 +36,24 @@ namespace SimpleBrouser
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.textUrl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // webBrowser
             // 
+            this.webBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser.Location = new System.Drawing.Point(12, 91);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
             this.webBrowser.Size = new System.Drawing.Size(1614, 814);
             this.webBrowser.TabIndex = 1;
+            this.webBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser_DocumentCompleted);
             // 
             // buttonUpdate
             // 
             this.buttonUpdate.Image = global::SimpleBrouser.Properties.Resources.reset_64;
-            this.buttonUpdate.Location = new System.Drawing.Point(663, 12);
+            this.buttonUpdate.Location = new System.Drawing.Point(172, 12);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(75, 73);
             this.buttonUpdate.TabIndex = 4;
@@ -59,7 +63,7 @@ namespace SimpleBrouser
             // buttonHome
             // 
             this.buttonHome.Image = global::SimpleBrouser.Properties.Resources.home_64;
-            this.buttonHome.Location = new System.Drawing.Point(582, 12);
+            this.buttonHome.Location = new System.Drawing.Point(91, 12);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(75, 73);
             this.buttonHome.TabIndex = 3;
@@ -69,7 +73,7 @@ namespace SimpleBrouser
             // buttonNext
             // 
             this.buttonNext.Image = global::SimpleBrouser.Properties.Resources.next_page_64;
-            this.buttonNext.Location = new System.Drawing.Point(744, 12);
+            this.buttonNext.Location = new System.Drawing.Point(253, 12);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 73);
             this.buttonNext.TabIndex = 2;
@@ -79,7 +83,7 @@ namespace SimpleBrouser
             // buttonBack
             // 
             this.buttonBack.Image = global::SimpleBrouser.Properties.Resources.back_64;
-            this.buttonBack.Location = new System.Drawing.Point(503, 12);
+            this.buttonBack.Location = new System.Drawing.Point(12, 12);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(73, 73);
             this.buttonBack.TabIndex = 2;
@@ -89,18 +93,31 @@ namespace SimpleBrouser
             // buttonSearch
             // 
             this.buttonSearch.Image = global::SimpleBrouser.Properties.Resources.info_64;
-            this.buttonSearch.Location = new System.Drawing.Point(825, 12);
+            this.buttonSearch.Location = new System.Drawing.Point(334, 12);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 73);
             this.buttonSearch.TabIndex = 5;
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
+            // textUrl
+            // 
+            this.textUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textUrl.Font = new System.Drawing.Font("Engravers MT", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textUrl.Location = new System.Drawing.Point(415, 18);
+            this.textUrl.Name = "textUrl";
+            this.textUrl.Size = new System.Drawing.Size(1000, 46);
+            this.textUrl.TabIndex = 6;
+            this.textUrl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textUrl_KeyUp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1657, 917);
+            this.Controls.Add(this.textUrl);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonHome);
@@ -112,6 +129,7 @@ namespace SimpleBrouser
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Browser";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -122,6 +140,7 @@ namespace SimpleBrouser
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textUrl;
     }
 }
 

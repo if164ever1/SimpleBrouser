@@ -49,5 +49,19 @@ namespace SimpleBrouser
         {
             webBrowser.GoSearch();
         }
+
+        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            textUrl.Text = webBrowser.Url.ToString();
+        }
+
+        private void textUrl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                webBrowser.Navigate(textUrl.Text);
+            }
+            
+        }
     }
 }
